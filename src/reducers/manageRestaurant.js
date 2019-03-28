@@ -14,7 +14,7 @@ action) {
       
       return {
         ...state,
-        restaurants: {...state.restaurants, newRestaurant}
+        restaurants: [...state.restaurants, newRestaurant]
       };
       
     case 'REMOVE_RESTAURANT':
