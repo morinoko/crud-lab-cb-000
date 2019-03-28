@@ -8,7 +8,7 @@ action) {
   switch (action.type) {
     case 'ADD_RESTAURANT':
       const newRestaurant = {
-        name: action.name,
+        text: action.text,
         id: cuid()
       };
       
