@@ -17,8 +17,13 @@ action) {
         restaurants: [...state.restaurants, newRestaurant]
       };
       
-    case 'REMOVE_RESTAURANT':
-      return state;
+    case 'DELETE_RESTAURANT':
+      const filteredRestaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id)
+      
+      return {
+        ...state,
+        restaurants: filteredRestaurants
+      }
       
     case 'ADD_REVIEW':
       return state;
