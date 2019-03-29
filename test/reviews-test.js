@@ -129,7 +129,7 @@ describe('Reviews Component', () => {
     const store = createStore(manageRestaurant);
     store.dispatch({type: 'ADD_RESTAURANT', text: 'Tarry Lodge'})
     let restaurantId = store.getState().restaurants[0].id
-    store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was good", restaurantId } })
+    store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was good", restaurantId:restaurantId } })
     store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was great", restaurantId } })
     store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was bad", restaurantId: "test"} })
     const wrapper = mount(<Provider store={store}><App /></Provider>);
