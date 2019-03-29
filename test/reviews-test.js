@@ -113,30 +113,30 @@ describe('Reviews Component', () => {
     expect(wrapper.find(ReviewsContainer).html()).to.include(wrapper.find(Reviews).html())
   });
 
-  xit('displays a review for when it is associated with the restaurant', () => {
-    const store = createStore(manageRestaurant);
-    store.dispatch({type: 'ADD_RESTAURANT', text: 'LoKi'})
-    let restaurantId = store.getState().restaurants[0].id
-    store.dispatch({ type: 'ADD_REVIEW', review: { text: "Was great", restaurantId } })
-    store.dispatch({ type: 'ADD_REVIEW', review: { text: "Was not great", restaurantId } })
-    const wrapper = mount(<Provider store={store}><App /></Provider>);
+  // xit('displays a review for when it is associated with the restaurant', () => {
+  //   const store = createStore(manageRestaurant);
+  //   store.dispatch({type: 'ADD_RESTAURANT', text: 'LoKi'})
+  //   let restaurantId = store.getState().restaurants[0].id
+  //   store.dispatch({ type: 'ADD_REVIEW', review: { text: "Was great", restaurantId } })
+  //   store.dispatch({ type: 'ADD_REVIEW', review: { text: "Was not great", restaurantId } })
+  //   const wrapper = mount(<Provider store={store}><App /></Provider>);
 
 
-    expect(wrapper.find(Review)).to.have.length(2);
-  });
+  //   expect(wrapper.find(Review)).to.have.length(2);
+  // });
 
-  xit('does not display any review unassociated with the restaurant', () => {
-    const store = createStore(manageRestaurant);
-    store.dispatch({type: 'ADD_RESTAURANT', text: 'Tarry Lodge'})
-    let restaurantId = store.getState().restaurants[0].id
-    store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was good", restaurantId:restaurantId } })
-    store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was great", restaurantId } })
-    store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was bad", restaurantId: "test"} })
-    const wrapper = mount(<Provider store={store}><App /></Provider>);
-    expect(wrapper.find(Review)).to.have.length(2);
-    expect(wrapper.text()).to.contain('it was good');
-    expect(wrapper.text()).to.not.contain('bad');
-  });
+  // xit('does not display any review unassociated with the restaurant', () => {
+  //   const store = createStore(manageRestaurant);
+  //   store.dispatch({type: 'ADD_RESTAURANT', text: 'Tarry Lodge'})
+  //   let restaurantId = store.getState().restaurants[0].id
+  //   store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was good", restaurantId:restaurantId } })
+  //   store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was great", restaurantId } })
+  //   store.dispatch({ type: 'ADD_REVIEW', review: { text: "it was bad", restaurantId: "test"} })
+  //   const wrapper = mount(<Provider store={store}><App /></Provider>);
+  //   expect(wrapper.find(Review)).to.have.length(2);
+  //   expect(wrapper.text()).to.contain('it was good');
+  //   expect(wrapper.text()).to.not.contain('bad');
+  // });
 
   it('has an unique id property that for each element', () => {
     const store = createStore(manageRestaurant);
