@@ -12,7 +12,7 @@ class Restaurant extends Component {
     return (
       <div>
         <li>
-          {restaurant.name}
+          {restaurant.text}
           <button onClick={() => this.handleOnClick()}> X </button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>

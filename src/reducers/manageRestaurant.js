@@ -26,7 +26,16 @@ action) {
       }
       
     case 'ADD_REVIEW':
-      return state;
+      const newReview = {
+        text: action.text,
+        restaurantId: action.restaurantId,
+        id: cuid()
+      }
+      
+      return {
+        ...state,
+        reviews: [...state.reviews, newReview]
+      }
       
     case 'REMOVE_REVIEW':
       return state;
